@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-smooch: var(--font-smooch);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +24,24 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .icon {
+    @apply relative p-2 text-gray-400 hover:text-gray-100 hover:bg-zinc-800 rounded-lg transition;
+  }
+
+  .icon-info {
+    @apply absolute -top-1 -right-1 size-4 bg-red-500 rounded-full text-xs text-white grid place-items-center;
+  }
+
+  .input {
+    @apply w-full p-2 border border-gray-600 rounded-md bg-zinc-800 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
 }

@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type {Metadata} from "next";
+import {Geist, Geist_Mono, Smooch} from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/sidebar";
+import Header from "@/components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -9,6 +11,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const smooch = Smooch({
+  weight: "400",
+  variable: "--font-smooch",
   subsets: ["latin"],
 });
 
@@ -25,9 +33,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${smooch.variable} antialiased`}
       >
-        {children}
+        <div className="flex h-full">
+          <Sidebar />
+
+          <div className="min-h-screen w-full">
+            <Header />
+
+            <main className="h-[calc(100vh-189px)] overflow-y-auto p-4 md:px-8 pb-10">
+              {children}
+            </main>
+          </div>
+        </div>
       </body>
     </html>
   );
