@@ -1,4 +1,4 @@
-🎫 Help / Support Ticket System
+## 🎫 Help / Support Ticket System
 
 A fully comprehensive CRUD ticketing application that allows users to create, track, and manage help requests, similar to an e-commerce platform. It also allows users to view their created tickets by category and status, and track them statistically.
 
