@@ -27,3 +27,7 @@ A fully comprehensive CRUD ticketing application that allows users to create, tr
 - Chart.js + react-chartjs-2
 - Lucide React
 - TypeScript
+
+
+## 📸 ScreenShot
+<img src="ticket-app.gif" />
